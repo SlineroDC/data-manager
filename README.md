@@ -37,7 +37,7 @@ data-manager/
 │ └── styles.css
 ├── js/
 │ └── main.js
-└── components/
+── components/
 └── productManager.js
 ``
 

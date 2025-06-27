@@ -1,5 +1,22 @@
 // dataManagement.js
 
+
+const menu = document.getElementById('menu');
+  const btn = document.getElementById('menuBtn');
+
+  // Toggle the dropdown menu on button click
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+
+  // Close menu if clicked outside
+  window.addEventListener('click', (e) => {
+    if (!menu.contains(e.target)) {
+      menu.classList.remove('show');
+    }
+  });
+
+
 // ======= Data Initialization =======
 let products = JSON.parse(localStorage.getItem('products')) || {
   1: { id: 1, name: "Mouse", price: 30000 },

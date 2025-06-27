@@ -47,3 +47,70 @@ button:hover {
     background: linear-gradient(90deg, #233347 60%, #4e5d6c 100%);
     transform: translateY(-2px) scale(1.03);
 }
+
+    /* Fixed container for nav top-left */
+    nav {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Button to toggle menu */
+    .menu-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+      user-select: none;
+    }
+
+    /* Hide the ul menu initially */
+    nav ul {
+      list-style: none;
+      margin: 5px 0 0 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      max-height: 0;         /* collapsed */
+      opacity: 0;            /* invisible */
+      overflow: hidden;
+      pointer-events: none;  /* disable clicks */
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      min-width: 220px;
+    }
+
+    /* Show menu when nav has 'show' class */
+    nav.show ul {
+      max-height: 500px;    /* expand */
+      opacity: 1;           /* visible */
+      pointer-events: auto; /* enable clicks */
+    }
+
+    /* List items style */
+    nav ul li {
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Remove border for last item */
+    nav ul li:last-child {
+      border-bottom: none;
+    }
+
+    /* Links style */
+    nav ul li a {
+      display: block;
+      padding: 12px 16px;
+      color: black;
+      text-decoration: none;
+    }
+
+    /* Link hover effect */
+    nav ul li a:hover {
+      background-color: #ddd;
+    }

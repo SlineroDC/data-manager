@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- General Meta Tags -->
   <meta charset="UTF-8" />
@@ -11,7 +12,8 @@
   <meta name="copyright" content="© 2025 SlineroDC. All rights reserved" />
   <meta name="organization" content="SlineroDC" />
   <meta name="sitedomain" content="https://github.com/SlineroDC/Object-Oriented-Data-Managementw" />
-  <meta name="description" content="A project demonstrating data management with JavaScript objects, sets, and maps. Interactive structures, validation, and data handling." />
+  <meta name="description"
+    content="A project demonstrating data management with JavaScript objects, sets, and maps. Interactive structures, validation, and data handling." />
   <meta name="keywords" content="JavaScript, Data Management, Objects, Sets, Maps, Web Development" />
   <meta name="robots" content="index,follow" />
   <meta name="googlebot" content="index,follow" />
@@ -20,10 +22,12 @@
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Object-Oriented Data Management" />
-  <meta property="og:description" content="A project demonstrating data management with JavaScript objects, sets, and maps. Interactive structures, validation, and data handling." />
+  <meta property="og:description"
+    content="A project demonstrating data management with JavaScript objects, sets, and maps. Interactive structures, validation, and data handling." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://github.com/SlineroDC/Object-Oriented-Data-Managementw" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/SlineroDC/Object-Oriented-Data-Managementw/refs/heads/develop/src/img/logo.png" />
+  <meta property="og:image"
+    content="https://raw.githubusercontent.com/SlineroDC/Object-Oriented-Data-Managementw/refs/heads/develop/src/img/logo.png" />
   <meta property="og:site_name" content="SlineroDC Projects" />
 
   <!-- Fonts or External Links -->
@@ -31,16 +35,17 @@
   <link rel="stylesheet" href="./src/css/style.css" />
   <title>Object-Oriented Data Management</title>
 </head>
+
 <body>
   <header>
     <h1>Data Management Services</h1>
-    <nav>
+    <nav id="menu">
+      <button class="menu-btn" id="menuBtn">☰ Menu</button>
       <ul>
         <li><a href="#aboutCompany">About Company</a></li>
         <li><a href="#listProducts">View List of Products</a></li>
         <li><a href="#uniqueProducts">View Unique Products</a></li>
         <li><a href="#productCategories">View Product Categories</a></li>
-
         <li><a href="#contact">Info and Contact</a></li>
       </ul>
     </nav>
@@ -65,21 +70,21 @@
       <pre id="displayCategories"></pre>
     </section>
     <section id="addProductSection">
-  <h2>Add New Product</h2>
-  <form id="productForm">
-    <label for="productName">Product Name:</label>
-    <input type="text" id="productName" name="productName" required />
+      <h2>Add New Product</h2>
+      <form id="productForm">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required />
 
-    <label for="productPrice">Price:</label>
-    <input type="number" id="productPrice" name="productPrice" required min="1" />
+        <label for="productPrice">Price:</label>
+        <input type="number" id="productPrice" name="productPrice" required min="1" />
 
-    <label for="productCategory">Category:</label>
-    <input type="text" id="productCategory" name="productCategory" required />
+        <label for="productCategory">Category:</label>
+        <input type="text" id="productCategory" name="productCategory" required />
 
-    <button type="submit">Add Product</button>
-  </form>
-  <p id="formMessage"></p>
-</section>
+        <button type="submit">Add Product</button>
+      </form>
+      <p id="formMessage"></p>
+    </section>
 
   </main>
 
@@ -99,4 +104,5 @@
 
   <script type="module" src="./src/js/main.js"></script>
 </body>
+
 </html>
