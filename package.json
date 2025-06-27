@@ -1,0 +1,27 @@
+{
+  "name": "data-manager",
+  "private": true,
+  "version": "1.0.0",
+  "description": "An interactive product manager built with Vite, focusing on advanced JavaScript data structures such as objects, sets, and maps for efficient data handling.",
+  "type": "module",
+  "author": "Sebastian Linero",
+  "license": "MIT",
+  "keywords": [
+    "vite",
+    "javascript",
+    "product-management",
+    "objects",
+    "sets",
+    "maps",
+    "interactive-ui",
+    "data-structures"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}

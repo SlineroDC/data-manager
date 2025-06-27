@@ -1,0 +1,49 @@
+/*Sets a gradient background, centers content using flexbox, and applies a sans-serif font. */
+body {
+    background: linear-gradient(135deg, #40db83 0%, #529de4 100%);
+    min-height: 100vh;
+    margin: 0;
+    font-family:'Inter',sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/*Styles the main container with a light background, rounded corners, shadow, and padding. */
+main {
+    background: rgba(245, 245, 245, 0.95);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(201, 214, 19, 0.747);
+    margin: 48px 0 32px 0;
+    max-width: 400px;
+    width: 100%;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ /* Adds spacing between sections. */
+section {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+button {
+    background: linear-gradient(90deg, #233347 0%, #84939C 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 8px;
+}
+/* Styles in hover click */
+button:hover {
+    background: linear-gradient(90deg, #233347 60%, #4e5d6c 100%);
+    transform: translateY(-2px) scale(1.03);
+}
