@@ -42,48 +42,40 @@
     <nav id="menu">
       <button class="menu-btn" id="menuBtn">☰ Menu</button>
       <ul>
-        <li><a href="#aboutCompany">About Company</a></li>
-        <li><a href="#listProducts">View List of Products</a></li>
-        <li><a href="#uniqueProducts">View Unique Products</a></li>
-        <li><a href="#productCategories">View Product Categories</a></li>
-        <li><a href="#contact">Info and Contact</a></li>
+        <li><a href="./index.html">About Company</a></li>
+        <li><a href="./src/pages/listProducts.html">View List of Products</a></li>
+        <li><a href="./src/pages/addProduct.html">Add Product</a></li>
+        <li><a href="/src/pages/editProduct.html">Edit Product</a></li>
+        <li><a href="./src/pages/removeProduct.html">Remove Product</a></li>
+        <li><a href="./src/pages/contact.html">Info and Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="listProducts">
-      <h2>Complete Product List</h2>
-      <button id="btnListProducts">View List of Products</button>
-      <pre id="displayListProducts"></pre>
-    </section>
-
-    <section id="uniqueProducts">
-      <h2>Unique Products</h2>
-      <button id="btnUniqueProducts">View Unique Products</button>
-      <pre id="displayUniqueProducts"></pre>
-    </section>
-
-    <section id="productCategories">
-      <h2>Categories and Product Names</h2>
-      <button id="btnCategories">View Products and Categories</button>
-      <pre id="displayCategories"></pre>
-    </section>
-    <section id="addProductSection">
-      <h2>Add New Product</h2>
-      <form id="productForm">
-        <label for="productName">Product Name:</label>
-        <input type="text" id="productName" name="productName" required />
-
-        <label for="productPrice">Price:</label>
-        <input type="number" id="productPrice" name="productPrice" required min="1" />
-
-        <label for="productCategory">Category:</label>
-        <input type="text" id="productCategory" name="productCategory" required />
-
-        <button type="submit">Add Product</button>
-      </form>
-      <p id="formMessage"></p>
+    
+    <section id="aboutCompany">
+      <h2>Technical Description of the Inventory System</h2>
+      <p>
+        Our inventory system is developed using a modern stack combining JavaScript, HTML, and CSS, with <strong>Vite</strong> as the primary build and development tool. This technology choice enables us to create a fast, efficient, and easy-to-maintain web application.
+      </p>
+      <p>
+        The core functionality leverages advanced data structures such as <code>Objects</code>, <code>Sets</code>, and <code>Maps</code> to model product data efficiently and prevent duplication:
+      </p>
+      <ul>
+        <li>
+          <strong>JavaScript:</strong> Implements object-oriented data management for products, utilizing <code>Objects</code> for product properties, <code>Set</code> to prevent duplicate entries, and <code>Map</code> to associate detailed category information. Iteration methods like <code>for...in</code>, <code>for...of</code>, and <code>Map.forEach()</code> ensure efficient data processing and validation.
+        </li>
+        <li>
+          <strong>HTML and CSS:</strong> Semantic HTML and modular CSS deliver a responsive, accessible, and user-friendly interface compatible across devices.
+        </li>
+        <li>
+          <strong>Vite:</strong> Acts as our bundler and development server, providing ultra-fast startup, hot module replacement, and easy configuration to enhance developer productivity.
+        </li>
+      </ul>
+      <p>
+        This stack supports scalability, maintainability, and future integration with APIs or databases, while delivering a smooth user experience and robust inventory management.
+      </p>
     </section>
 
   </main>
@@ -91,11 +83,11 @@
   <footer>
     <article id="redes">
       <h3>Social Networks</h3>
-      <a href="https://x.com/?lang=es" target="_blank" rel="noopener noreferrer">
-        <img class="redes-sociales" src="./src/img/x-logo.png" alt="X logo" />
+      <a href="https://github.com/SlineroDC" target="_blank">
+        <img class="redes-sociales" src="./src/img/logoGithub.png" alt="github">
       </a>
-      <a href="https://www.youtube.com/?app=desktop&hl=es" target="_blank" rel="noopener noreferrer">
-        <img class="redes-sociales" src="./src/img/youtube-logo.png" alt="YouTube logo" />
+      <a href="https://discord.com/users/696218966301081621" target="_blank" >
+        <img class="redes-sociales" src="./src/img/discordLogo.png" alt="dicord"/>
       </a>
     </article>
 

@@ -1,116 +1,175 @@
 /*Sets a gradient background, centers content using flexbox, and applies a sans-serif font. */
 body {
-    background: linear-gradient(135deg, #40db83 0%, #529de4 100%);
-    min-height: 100vh;
-    margin: 0;
-    font-family:'Inter',sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+  color: #2b2b2b;
+  background: #2b2b2b;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 /*Styles the main container with a light background, rounded corners, shadow, and padding. */
 main {
-    background: rgba(245, 245, 245, 0.95);
-    border-radius: 18px;
-    box-shadow: 0 8px 32px 0 rgba(201, 214, 19, 0.747);
-    margin: 48px 0 32px 0;
-    max-width: 400px;
-    width: 100%;
-    padding: 40px 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background: #f9f9f9;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 #86868b;
+  margin: 48px 0 32px 0;
+  max-width: 400px;
+  width: 100%;
+  padding: 40px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
- /* Adds spacing between sections. */
+h1 {
+  color: #f9f9f9;
+}
+
+code,strong{
+  color: #1561f0;
+}
+ul,li{
+  padding: 20px 10px;
+}
+/* Adds spacing between sections. */
 section {
-    width: 100%;
-    margin-bottom: 32px;
+  width: 100%;
+  margin-bottom: 32px;
 }
 
-button {
-    background: linear-gradient(90deg, #233347 0%, #84939C 100%);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 0;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-    margin-top: 8px;
+a{
+  text-decoration: none;
+  display: inline-block;
 }
+button {
+  background: #1561f0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 10px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 8px;
+}
+
 /* Styles in hover click */
 button:hover {
-    background: linear-gradient(90deg, #233347 60%, #4e5d6c 100%);
-    transform: translateY(-2px) scale(1.03);
+  background: #5586e0;
+  transform: translateY(-2px) scale(1.03);
 }
 
-    /* Fixed container for nav top-left */
-    nav {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 1000;
-      font-family: Arial, sans-serif;
-    }
+/* Fixed container for nav top-left */
+nav {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+}
 
-    /* Button to toggle menu */
-    .menu-btn {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 4px;
-      user-select: none;
-    }
+/* Button to toggle menu */
+.menu-btn {
+  background-color: #1561f0;
+  color: #f9f9f9;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  user-select: none;
+}
 
-    /* Hide the ul menu initially */
-    nav ul {
-      list-style: none;
-      margin: 5px 0 0 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      border-radius: 4px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      max-height: 0;         /* collapsed */
-      opacity: 0;            /* invisible */
-      overflow: hidden;
-      pointer-events: none;  /* disable clicks */
-      transition: max-height 0.3s ease, opacity 0.3s ease;
-      min-width: 220px;
-    }
+/* Hide the ul menu initially */
+nav ul {
+  list-style: none;
+  margin: 5px 0 0 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2);
+  max-height: 0;
+  /* collapsed */
+  opacity: 0;
+  /* invisible */
+  overflow: hidden;
+  pointer-events: none;
+  /* disable clicks */
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  min-width: 220px;
+}
 
-    /* Show menu when nav has 'show' class */
-    nav.show ul {
-      max-height: 500px;    /* expand */
-      opacity: 1;           /* visible */
-      pointer-events: auto; /* enable clicks */
-    }
+/* Show menu when nav has 'show' class */
+nav.show ul {
+  max-height: 500px;
+  /* expand */
+  opacity: 1;
+  /* visible */
+  pointer-events: auto;
+  /* enable clicks */
+}
 
-    /* List items style */
-    nav ul li {
-      border-bottom: 1px solid #ddd;
-    }
+/* List items style */
+nav ul li {
+  border-bottom: 1px solid #ddd;
+}
 
-    /* Remove border for last item */
-    nav ul li:last-child {
-      border-bottom: none;
-    }
+/* Remove border for last item */
+nav ul li:last-child {
+  border-bottom: none;
+}
 
-    /* Links style */
-    nav ul li a {
-      display: block;
-      padding: 12px 16px;
-      color: black;
-      text-decoration: none;
-    }
+/* Links style */
+nav ul li a {
+  display: block;
+  padding: 12px 16px;
+  color: black;
+  text-decoration: none;
+}
 
-    /* Link hover effect */
-    nav ul li a:hover {
-      background-color: #ddd;
-    }
+/* Link hover effect */
+nav ul li a:hover {
+  background-color: #ddd;
+}
+
+/* Styles the social media section heading. */
+#redes h3 {
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.redes-sociales {
+  width: 50px;
+  margin: 0 8px;
+  vertical-align: middle;
+
+}
+
+/* Styles social media icons with size and hover scaling effect. */
+.redes-sociales:hover {
+  transition: ease-in-out 0.5s;
+  transform: scale(1.30);
+  
+}
+
+/* Ensures images are responsive. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styles copyright text. */
+.copy {
+  color: #f9f9f9;
+  font-size: 0.95rem;
+  margin-top: 12px;
+}
+
+a:focus {
+  outline: none;
+}
