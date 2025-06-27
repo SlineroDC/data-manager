@@ -61,4 +61,10 @@ DATA-MANAGER/
 
 - **Author:** Sebatian Linero De Castro
 - **Email:** sebastianlinero15@gmail.com  
-- **GitHub:** [github.com/SlineroDC](https://github.com/SlineroDC)
+- **GitHub:** [github.com/SlineroDC](https://github.com/SlineroDC)  
+
+---
+
+Feel free to contribute or open issues for any improvements or bugs!
+
+
