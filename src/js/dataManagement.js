@@ -2,19 +2,19 @@
 
 
 const menu = document.getElementById('menu');
-  const btn = document.getElementById('menuBtn');
+const btn = document.getElementById('menuBtn');
 
-  // Toggle the dropdown menu on button click
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('show');
-  });
+// Toggle the dropdown menu on button click
+btn.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
 
-  // Close menu if clicked outside
-  window.addEventListener('click', (e) => {
-    if (!menu.contains(e.target)) {
-      menu.classList.remove('show');
-    }
-  });
+// Close menu if clicked outside
+window.addEventListener('click', (e) => {
+  if (!menu.contains(e.target)) {
+    menu.classList.remove('show');
+  }
+});
 
 
 // ======= Data Initialization =======
@@ -70,9 +70,6 @@ export function showCategories() {
   });
   displayCategories.textContent = output || 'No categories available.';
 }
-// dataManagement.js
-
-// ... (mismo código anterior)
 
 const productForm = document.getElementById('productForm');
 const productNameInput = document.getElementById('productName');

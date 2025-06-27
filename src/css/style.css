@@ -1,4 +1,4 @@
-/*Sets a gradient background, centers content using flexbox, and applies a sans-serif font. */
+/* Sets a solid background, centers content using flexbox, and applies a sans-serif font. */
 body {
   color: #2b2b2b;
   background: #2b2b2b;
@@ -11,7 +11,7 @@ body {
   justify-content: flex-start;
 }
 
-/*Styles the main container with a light background, rounded corners, shadow, and padding. */
+/* Main container: card style, centered, responsive width */
 main {
   background: #f9f9f9;
   border-radius: 18px;
@@ -25,26 +25,38 @@ main {
   align-items: center;
 }
 
+/* Main title color */
 h1 {
   color: #f9f9f9;
 }
 
-code,strong{
+/* Highlight code and strong tags */
+code, strong {
   color: #1561f0;
 }
-ul,li{
+
+/* List padding for better readability */
+ul, li {
   padding: 20px 10px;
 }
-/* Adds spacing between sections. */
+
+/* Section/article spacing */
 section {
   width: 100%;
   margin-bottom: 32px;
 }
+article {
+  width: 100%;
+  margin-bottom: 32px;
+}
 
-a{
+/* Remove underline from links and make them inline-block */
+a {
   text-decoration: none;
   display: inline-block;
 }
+
+/* General button style: color, rounded, padding, hover effect */
 button {
   background: #1561f0;
   color: #fff;
@@ -58,13 +70,13 @@ button {
   margin-top: 8px;
 }
 
-/* Styles in hover click */
+/* Button hover: lighter blue and slight scale */
 button:hover {
   background: #5586e0;
   transform: translateY(-2px) scale(1.03);
 }
 
-/* Fixed container for nav top-left */
+/* Navigation: fixed top-left on desktop */
 nav {
   position: fixed;
   top: 10px;
@@ -73,7 +85,7 @@ nav {
   font-family: Arial, sans-serif;
 }
 
-/* Button to toggle menu */
+/* Hamburger menu button style */
 .menu-btn {
   background-color: #1561f0;
   color: #f9f9f9;
@@ -85,7 +97,7 @@ nav {
   user-select: none;
 }
 
-/* Hide the ul menu initially */
+/* Dropdown menu: hidden by default, styled background and shadow */
 nav ul {
   list-style: none;
   margin: 5px 0 0 0;
@@ -94,37 +106,31 @@ nav ul {
   border-radius: 4px;
   box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2);
   max-height: 0;
-  /* collapsed */
   opacity: 0;
-  /* invisible */
   overflow: hidden;
   pointer-events: none;
-  /* disable clicks */
   transition: max-height 0.3s ease, opacity 0.3s ease;
   min-width: 220px;
 }
 
-/* Show menu when nav has 'show' class */
+/* Show dropdown menu when nav has 'show' class */
 nav.show ul {
   max-height: 500px;
-  /* expand */
   opacity: 1;
-  /* visible */
   pointer-events: auto;
-  /* enable clicks */
 }
 
-/* List items style */
+/* Menu list item border */
 nav ul li {
   border-bottom: 1px solid #ddd;
 }
 
-/* Remove border for last item */
+/* Remove border for last menu item */
 nav ul li:last-child {
   border-bottom: none;
 }
 
-/* Links style */
+/* Menu links: block style, padding, color */
 nav ul li a {
   display: block;
   padding: 12px 16px;
@@ -132,44 +138,272 @@ nav ul li a {
   text-decoration: none;
 }
 
-/* Link hover effect */
+/* Menu link hover: light background */
 nav ul li a:hover {
   background-color: #ddd;
 }
 
-/* Styles the social media section heading. */
+/* Social section heading style */
 #redes h3 {
   color: #fff;
   margin-bottom: 8px;
 }
 
+/* Social icon size and spacing */
 .redes-sociales {
   width: 50px;
   margin: 0 8px;
   vertical-align: middle;
-
 }
 
-/* Styles social media icons with size and hover scaling effect. */
+/* Social icon hover: scale up */
 .redes-sociales:hover {
   transition: ease-in-out 0.5s;
   transform: scale(1.30);
-  
 }
 
-/* Ensures images are responsive. */
+/* Responsive images */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Styles copyright text. */
+/* Copyright text style */
 .copy {
   color: #f9f9f9;
   font-size: 0.95rem;
   margin-top: 12px;
 }
 
+/* Remove outline on focused links */
 a:focus {
   outline: none;
+}
+
+/* Add product form: vertical layout, rounded, spacing */
+#productForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Add product form inputs: rounded, full width, fixed height */
+#productForm input[type="text"],
+#productForm input[type="number"],
+#productForm input[type="email"],
+#productForm textarea {
+  border-radius: 5px;
+  width: 100%;
+  height: 20px;
+}
+
+/* Center the add product button */
+#productForm button {
+  align-self: center;
+}
+
+/* Contact form: card style, rounded, shadow, spacing */
+.form form {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(21, 97, 240, 0.08);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Contact form labels: blue, bold */
+.form label {
+  font-weight: 600;
+  color: #1561f0;
+  margin-bottom: 4px;
+}
+
+/* Contact form inputs: rounded, border, padding */
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+  border: 1.5px solid #bfc9d8;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 0.2s;
+  margin-bottom: 4px;
+  resize: none;
+}
+
+/* Contact form textarea: taller, resizable */
+.form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Contact form input focus: blue border */
+.form input[type="text"]:focus,
+.form input[type="email"]:focus,
+.form textarea:focus {
+  border-color: #1561f0;
+  outline: none;
+}
+
+/* Contact form submit button: blue, rounded, bold, hover effect */
+.form input[type="submit"] {
+  background: #1561f0;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.form input[type="submit"]:hover {
+  background: #5586e0;
+  transform: translateY(-2px) scale(1.03);
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.form input[type="submit"]:hover {
+  background: #5586e0;
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Responsive styles for tablet and mobile */
+@media (max-width: 900px) {
+  /* Main: less padding, wider for tablet */
+  main {
+    padding: 32px 32px;
+    max-width: 95vw;
+  }
+  /* Nav menu: smaller min-width */
+  nav ul {
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Main: minimal padding, no border, no shadow */
+  main {
+    padding: 18px 4vw;
+    max-width: 100vw;
+    border-radius: 0;
+    margin: 24px 0 16px 0;
+    box-shadow: none;
+  }
+  /* Smaller headings, centered */
+  h1, h2, h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  /* Less spacing for sections/articles */
+  section, article {
+    margin-bottom: 18px;
+    width: 100%;
+  }
+  /* Nav menu: full width, no border radius, no shadow */
+  nav ul {
+    min-width: 100vw;
+    border-radius: 0;
+    left: 0;
+    right: 0;
+    box-shadow: none;
+  }
+  /* Smaller social icons */
+  .redes-sociales {
+    width: 36px;
+    margin: 0 4px;
+  }
+  /* Smaller copyright */
+  .copy {
+    font-size: 0.85rem;
+  }
+  /* Forms: less padding, no border, no shadow */
+  .form form, #productForm {
+    padding: 12px 2vw;
+    max-width: 100vw;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  /* Inputs: smaller font, less padding, shorter height */
+  #productForm input[type="text"],
+  #productForm input[type="number"],
+  #productForm input[type="email"],
+  #productForm textarea,
+  .form input[type="text"],
+  .form input[type="email"],
+  .form textarea {
+    font-size: 1rem;
+    padding: 10px 6px;
+    height: 36px;
+  }
+  #productForm textarea,
+  .form textarea {
+    min-height: 48px;
+    height: 56px;
+    font-size: 1rem;
+  }
+  /* Buttons: full width, smaller font */
+  #productForm button,
+  .form input[type="submit"],
+  button,
+  input[type="submit"] {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 0;
+    align-self: stretch;
+  }
+
+  /* Header: stack title and menu vertically on mobile */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 16px;
+    gap: 8px;
+  }
+
+  /* Title above menu button */
+  header h1 {
+    order: 1;
+    margin-bottom: 8px;
+    z-index: 2;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  /* Menu below title */
+  #menu {
+    position: static;
+    order: 2;
+    align-self: center;
+    margin-bottom: 0;
+    margin-top: 0;
+    z-index: 2;
+  }
+
+  /* Remove fixed nav for mobile, stack vertically */
+  nav {
+    position: static;
+    top: unset;
+    left: unset;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
