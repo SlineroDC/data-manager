@@ -1,90 +1,197 @@
-// dataManagement.js
+// // ======= Data Initialization =======
+// let products = JSON.parse(localStorage.getItem('products')) || {
+//   1: { id: 1, name: "Mouse", price: 30000 },
+//   2: { id: 2, name: "Keyboard", price: 60000 },
+//   3: { id: 3, name: "Monitor", price: 200000 }
+// };
 
+// // DOM Elements
+// const displayList = document.getElementById('displayListProducts');
+// const productForm = document.getElementById('productForm');
+// const productIdInput = document.getElementById('productId');
+// const productNameInput = document.getElementById('productName');
+// const productPriceInput = document.getElementById('productPrice');
+// const formMessage = document.getElementById('formMessage');
 
-const menu = document.getElementById('menu');
-const btn = document.getElementById('menuBtn');
+// // Render Functions 
 
-// Toggle the dropdown menu on button click
-btn.addEventListener('click', () => {
-  menu.classList.toggle('show');
-});
+// export function initProductApp() {
+//   // Save initial products to localStorage if not there yet
+//   if (!localStorage.getItem('products')) {
+//     localStorage.setItem('products', JSON.stringify(products));
+//   }
+// }
 
-// Close menu if clicked outside
-window.addEventListener('click', (e) => {
-  if (!menu.contains(e.target)) {
-    menu.classList.remove('show');
-  }
-});
+// // Display all products
+// export function showProducts() {
+//   let output = '';
+//   for (let key in products) {
+//     const p = products[key];
+//     output += `ID: ${p.id}, ${p.name}, $${p.price}\n`;
+//   }
+//   if (displayList) {
+//     displayList.textContent = output || 'No products available.';
+//   }
+// }
 
+// // Validar producto nuevo por ID y nombre
+// function validateProduct(newProduct) {
+//   if (!newProduct.id || !newProduct.name || !newProduct.price /*|| !newProduct.category*/) {
+//     return { valid: false, message: 'All fields are required.' };
+//   }
+//   for (let key in products) {
+//     if (String(products[key].id) === String(newProduct.id)) {
+//       return { valid: false, message: 'Product ID already exists.' };
+//     }
+//     if (products[key].name.toLowerCase() === newProduct.name.toLowerCase()) {
+//       return { valid: false, message: 'Product name already exists.' };
+//     }
+//   }
+//   if (isNaN(newProduct.price) || newProduct.price <= 0) {
+//     return { valid: false, message: 'Price must be a positive number.' };
+//   }
+//   return { valid: true };
+// }
 
-// ======= Data Initialization =======
-let products = JSON.parse(localStorage.getItem('products')) || {
-  1: { id: 1, name: "Mouse", price: 30000 },
-  2: { id: 2, name: "Keyboard", price: 60000 },
-  3: { id: 3, name: "Monitor", price: 200000 }
-};
+// // Add product handler (usa el id ingresado)
+// function addProduct(event) {
+//   event.preventDefault();
+//   formMessage.textContent = '';
 
-let setProducts = new Set(Object.values(products));
+//   const newProduct = {
+//     id: productIdInput.value.trim(),
+//     name: productNameInput.value.trim(),
+//     price: Number(productPriceInput.value)
+//   };
 
-let mapCategories = new Map([
-  ["Peripherals", "Mouse"],
-  ["Input", "Keyboard"],
-  ["Display", "Monitor"]
-]);
+//   const validation = validateProduct(newProduct);
+//   if (!validation.valid) {
+//     formMessage.textContent = validation.message;
+//     return;
+//   }
 
-// ======= DOM Elements =======
+//   // Add product to structures
+//   products[newProduct.id] = { ...newProduct };
+//   localStorage.setItem('products', JSON.stringify(products));
+
+//   // Clear form
+//   productForm.reset();
+//   formMessage.style.color = 'green';
+//   formMessage.textContent = 'Product added successfully!';
+//   // Always show the updated product list
+//   showProducts();
+// }
+
+// // Edit product handler (busca por id)
+// function editProduct(event) {
+//   event.preventDefault();
+//   formMessage.textContent = '';
+
+//   const id = productIdInput.value.trim();
+//   if (!products[id]) {
+//     formMessage.textContent = 'Product ID not found.';
+//     formMessage.style.color = 'red';
+//     return;
+//   }
+
+//   products[id].name = productNameInput.value.trim();
+//   products[id].price = Number(productPriceInput.value);
+//   // category removed
+
+//   localStorage.setItem('products', JSON.stringify(products));
+//   productForm.reset();
+//   formMessage.style.color = 'green';
+//   formMessage.textContent = 'Product updated successfully!';
+
+//   // Show the updated product list below the form
+//   if (displayList) {
+//     showProducts();
+//   } else {
+//     const info = document.createElement('pre');
+//     info.textContent = `ID: ${id}, ${products[id].name}, $${products[id].price}`;
+//     formMessage.parentNode.appendChild(info);
+//   }
+// }
+
+// // Remove product handler (busca por id)
+// function removeProduct(event) {
+//   event.preventDefault();
+//   formMessage.textContent = '';
+
+//   const id = productIdInput.value.trim();
+//   if (!products[id]) {
+//     formMessage.textContent = 'Product ID not found.';
+//     formMessage.style.color = 'red';
+//     return;
+//   }
+
+//   delete products[id];
+//   localStorage.setItem('products', JSON.stringify(products));
+//   productForm.reset();
+//   formMessage.style.color = 'green';
+//   formMessage.textContent = 'Product removed successfully!';
+
+//   // Show the updated product list below the form
+//   if (displayList) {
+//     showProducts();
+//   } else {
+//     const info = document.createElement('pre');
+//     info.textContent = 'Product removed.';
+//     formMessage.parentNode.appendChild(info);
+//   }
+// }
+// if (displayList) {
+//   showProducts();
+// } else {
+//   const info = document.createElement('pre');
+//   info.textContent = 'Product removed.';
+//   formMessage.parentNode.appendChild(info);
+// }
+
+// --- Product logic for Add Product page ---
+
+// Get DOM elements
+const productForm = document.getElementById('productForm');
+const productIdInput = document.getElementById('productId');
+const productNameInput = document.getElementById('productName');
+const productPriceInput = document.getElementById('productPrice');
+const formMessage = document.getElementById('formMessage');
 const displayList = document.getElementById('displayListProducts');
-const displayUnique = document.getElementById('displayUniqueProducts');
-const displayCategories = document.getElementById('displayCategories');
 
-// ======= Render Functions =======
-
-export function initProductApp() {
-  // Save initial products to localStorage if not there yet
-  if (!localStorage.getItem('products')) {
-    localStorage.setItem('products', JSON.stringify(products));
-  }
+// Get products from localStorage or initialize empty object
+function getProducts() {
+  return JSON.parse(localStorage.getItem('products')) || {};
 }
 
-export function showProducts() {
+// Save products to localStorage
+function saveProducts(products) {
+  localStorage.setItem('products', JSON.stringify(products));
+}
+
+// Show all products in the <pre>
+function showProducts() {
+  const products = getProducts();
   let output = '';
   for (let key in products) {
     const p = products[key];
     output += `ID: ${p.id}, ${p.name}, $${p.price}\n`;
   }
-  displayList.textContent = output || 'No products available.';
-}
-
-export function showUniqueProducts() {
-  let output = '';
-  for (let p of setProducts) {
-    output += `${p.name} - $${p.price}\n`;
+  if (displayList) {
+    displayList.textContent = output || 'No products available.';
   }
-  displayUnique.textContent = output || 'No unique products available.';
 }
 
-export function showCategories() {
-  let output = '';
-  mapCategories.forEach((productName, category) => {
-    output += `Category: ${category} -> Product: ${productName}\n`;
-  });
-  displayCategories.textContent = output || 'No categories available.';
-}
-
-const productForm = document.getElementById('productForm');
-const productNameInput = document.getElementById('productName');
-const productPriceInput = document.getElementById('productPrice');
-const productCategoryInput = document.getElementById('productCategory');
-const formMessage = document.getElementById('formMessage');
-
-// Validate new product — no empty, no duplicates by name (case insensitive)
-function validateProduct(newProduct) {
-  if (!newProduct.name || !newProduct.price || !newProduct.category) {
+// Validate product fields
+function validateProduct(newProduct, products) {
+  if (!newProduct.id || !newProduct.name || !newProduct.price) {
     return { valid: false, message: 'All fields are required.' };
   }
   for (let key in products) {
+    if (String(products[key].id) === String(newProduct.id)) {
+      return { valid: false, message: 'Product ID already exists.' };
+    }
     if (products[key].name.toLowerCase() === newProduct.name.toLowerCase()) {
-      return { valid: false, message: 'Product already exists.' };
+      return { valid: false, message: 'Product name already exists.' };
     }
   }
   if (isNaN(newProduct.price) || newProduct.price <= 0) {
@@ -98,34 +205,32 @@ function addProduct(event) {
   event.preventDefault();
   formMessage.textContent = '';
 
+  const products = getProducts();
   const newProduct = {
-    id: Object.keys(products).length + 1,
+    id: productIdInput.value.trim(),
     name: productNameInput.value.trim(),
-    price: Number(productPriceInput.value),
-    category: productCategoryInput.value.trim()
+    price: Number(productPriceInput.value)
   };
 
-  const validation = validateProduct(newProduct);
+  const validation = validateProduct(newProduct, products);
   if (!validation.valid) {
     formMessage.textContent = validation.message;
+    formMessage.style.color = 'red';
     return;
   }
 
-  // Add product to structures
-  products[newProduct.id] = { id: newProduct.id, name: newProduct.name, price: newProduct.price };
-  setProducts.add(products[newProduct.id]);
-  mapCategories.set(newProduct.category, newProduct.name);
+  products[newProduct.id] = { ...newProduct };
+  saveProducts(products);
 
-  // Save to localStorage
-  localStorage.setItem('products', JSON.stringify(products));
-
-  // Clear form
   productForm.reset();
   formMessage.style.color = 'green';
   formMessage.textContent = 'Product added successfully!';
-
-  // Refresh displays (optional: you can call one or all)
   showProducts();
-  showUniqueProducts();
-  showCategories();
 }
+
+// Attach event only if form exists (for addProduct page)
+if (productForm) {
+  productForm.addEventListener('submit', addProduct);
+  showProducts();
+}
+
