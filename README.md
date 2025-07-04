@@ -6,9 +6,9 @@ This project is designed to strengthen skills in managing advanced data structur
 
 ## 🚀 Features
 
-- Manage products with unique identifiers, names, prices, and categories.
-- Prevent duplicate product entries using `Set`.
-- Store and associate additional product information using `Map`.
+- Manage products with unique identifiers, names, and prices.
+- Prevent duplicate product entries.
+- Store and associate additional product information.
 - Validate and iterate over product data using:
   - `for...in` for object properties.
   - `for...of` for Sets.
@@ -18,13 +18,17 @@ This project is designed to strengthen skills in managing advanced data structur
 
 ---
 
-## 📚 Technologies Used
+## 📸 Screenshots
 
-- JavaScript (ES6+)
-- Vite (development server and build tool)
-- HTML5 / CSS3
-- DOM Manipulation
-- Advanced data structures: `Object`, `Set`, `Map`
+> **Add your screenshots here for better visualization.**
+>
+> Example:
+>
+> | Add Product Page | Product List Page |
+> |------------------|------------------|
+> | ![Add Product](./src/img/addproducts.png) | ![Product List](./src/img/viewList.png) |
+>
+> Place your images in `src/img/` and update the filenames above.
 
 ---
 
@@ -40,7 +44,8 @@ DATA-MANAGER/
 │   ├── img/                    # Image assets used in the project
 │   │   ├── discordLogo.png
 │   │   ├── logo.png
-│   │   └── logoGithub.png
+│   │   ├── logoGithub.png
+│   │   └── (add your screenshots here)
 │   ├── dataManagement.js       # Data management logic
 │   ├── main.js                 # Main application script
 │   └── pages/                  # HTML pages for the application
@@ -57,9 +62,67 @@ DATA-MANAGER/
 └── README.md                   # Project documentation
 ```
 
+---
+
+## 📋 Product Data Table Example
+
+| ID  | Name        | Price   |
+|-----|-------------|---------|
+| 1   | Laptop      | $800    |
+| 2   | Smartphone  | $500    |
+| 3   | Tablet      | $300    |
+
+---
+
+## 🛠️ How to Use
+
+1. **Install dependencies:**  
+   ```bash
+   npm install
+   ```
+
+2. **Run the development server:**  
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for production:**  
+   ```bash
+   npm run build
+   ```
+
+4. **Preview the production build:**  
+   ```bash
+   npm run preview
+   ```
+
+---
+
+## 📚 Technologies Used
+
+- JavaScript (ES6+)
+- Vite (development server and build tool)
+- HTML5 / CSS3
+- DOM Manipulation
+- Advanced data structures: `Object`, `Set`, `Map`
+
+---
+
+## 🧩 Main Components
+
+| File/Folder         | Description                                 |
+|---------------------|---------------------------------------------|
+| `src/pages/`        | HTML pages for each feature                 |
+| `src/css/style.css` | Main stylesheet for the UI                  |
+| `src/img/`          | Images and icons (add screenshots here)     |
+| `src/dataManagement.js` | Product data logic and storage         |
+| `src/main.js`       | Main JS entry point, event handlers         |
+
+---
+
 ## 👤 Author & Contact
 
-- **Author:** Sebatian Linero De Castro
+- **Author:** Sebastian Linero De Castro
 - **Email:** sebastianlinero15@gmail.com  
 - **GitHub:** [github.com/SlineroDC](https://github.com/SlineroDC)  
 

@@ -52,43 +52,35 @@
     </header>
 
     <main>
-        
-        <section id="addProductSection">
+        <section id="removeProductSection">
             <h2>Remove Products</h2>
-            <form id="productForm">
-                <label for="productId">Product ID:</label>
-                <input type="text" id="productId" name="productId" required />
-
-                <label for="productName">Product Name:</label>
-                <input type="text" id="productName" name="productName" required />
-
-                <label for="productPrice">Price:</label>
-                <input type="number" id="productPrice" name="productPrice" required min="1" />
-
+            <form id="removeForm">
+                <label for="removeProductId">Product ID:</label>
+                <input type="number" id="removeProductId" name="removeProductId" required min="1" />
                 <button type="submit">Remove Product</button>
             </form>
-            <p id="formMessage"></p>
+            <p id="removeMessage"></p>
+
+            <!-- Contenedor para mostrar la lista de productos -->
+            <div id="displayListProducts"></div>
         </section>
-
-
-
-
     </main>
-      <footer>
-    <article id="redes">
-      <h3>Social Networks</h3>
-      <a href="https://github.com/SlineroDC" target="_blank">
-        <img class="redes-sociales" src="../img/logoGithub.png" alt="github">
-      </a>
-      <a href="https://discord.com/users/696218966301081621" target="_blank" >
-        <img class="redes-sociales" src="../img/discordLogo.png" alt="dicord"/>
-      </a>
-    </article>
 
-    <p class="copy">&copy; 2025 Sebastián Linero</p>
-  </footer>
+    <footer>
+        <article id="redes">
+            <h3>Social Networks</h3>
+            <a href="https://github.com/SlineroDC" target="_blank">
+                <img class="redes-sociales" src="../img/logoGithub.png" alt="github" />
+            </a>
+            <a href="https://discord.com/users/696218966301081621" target="_blank">
+                <img class="redes-sociales" src="../img/discordLogo.png" alt="discord" />
+            </a>
+        </article>
 
+        <p class="copy">&copy; 2025 Sebastián Linero</p>
+    </footer>
 
     <script type="module" src="../js/main.js"></script>
-
 </body>
+
+</html>
