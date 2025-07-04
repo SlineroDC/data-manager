@@ -1,7 +1,3 @@
-// main.js
-
-// Import your app logic
-import { initProductApp, showProducts, } from './dataManagement.js';
 
 // Hamburger menu logic (must be here to work on every page)
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,15 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Product app logic
-window.addEventListener('DOMContentLoaded', () => {
-  initProductApp();
+//import funtions from dataMagnament
 
-  const btnList = document.getElementById('btnListProducts');
-  if (btnList) {
-    btnList.addEventListener('click', showProducts);
-  }
-});
+
+
+
+
 
 
 
