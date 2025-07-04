@@ -29,6 +29,9 @@ main {
 h1 {
   color: #f9f9f9;
 }
+div{
+  color: #2b2b2b;
+}
 
 /* Highlight code and strong tags */
 code, strong {
@@ -406,4 +409,43 @@ a:focus {
     flex-direction: column;
     align-items: center;
   }
+}
+.product {
+  padding: 0.4rem;
+  border-bottom: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+/* Tarjeta individual de producto */
+.product {
+  background: #f9f9f9;            /* Fondo claro como tu <main> */
+  border-radius: 12px;            /* Bordes redondeados suaves */
+  box-shadow: 0 4px 12px rgba(21, 97, 240, 0.1); /* Sombra azul muy ligera */
+  padding: 16px 20px;             /* Espacio interno */
+  margin-bottom: 16px;            /* Separación entre productos */
+  width: 100%;                   /* Ocupa todo el ancho del contenedor */
+  color: #2b2b2b;                /* Texto oscuro, igual que el body */
+  font-family: 'Inter', sans-serif; /* La misma fuente */
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+/* Efecto al pasar el cursor */
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(21, 97, 240, 0.2);
+}
+
+/* Título del producto */
+.product h3 {
+  margin: 0 0 8px 0;
+  color: #1561f0; 
+  font-weight: 700;
+}
+
+/* Texto dentro de la tarjeta */
+.product p {
+  margin: 4px 0;
+  font-weight: 500;
+  color: #444; 
 }
