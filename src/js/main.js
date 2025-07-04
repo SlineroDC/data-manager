@@ -12,11 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
       menu.classList.toggle('show');
     });
+    // Use document, not window, for click event
     document.addEventListener('click', (e) => {
       if (!menu.contains(e.target)) {
         menu.classList.remove('show');
       }
     });
+  } else {
+    // Debug: log if elements are missing
+    if (!menu) console.warn('Hamburger menu: #menu not found');
+    if (!btn) console.warn('Hamburger menu: #menuBtn not found');
   }
 });
 
